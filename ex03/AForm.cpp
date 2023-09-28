@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:37:19 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:48:54 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:11:46 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AForm::AForm() : _name("default"), _signed(false), _gradeToSign(150), _gradeToEx
 	return ;
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, size_t gradeToSign, size_t gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
@@ -54,12 +54,12 @@ bool				AForm::getSigned() const
 	return (this->_signed);
 }
 
-int					AForm::getGradeToSign() const
+size_t				AForm::getGradeToSign() const
 {
 	return (this->_gradeToSign);
 }
 
-int					AForm::getGradeToExecute() const
+size_t				AForm::getGradeToExecute() const
 {
 	return (this->_gradeToExecute);
 }

@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:29:54 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:55:36 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:11:40 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ class AForm
 	private:
 		std::string const	_name;
 		bool				_signed;
-		int const			_gradeToSign;
-		int const			_gradeToExecute;
+		size_t const			_gradeToSign;
+		size_t const			_gradeToExecute;
 		
 	public:
 		AForm();
-		AForm(std::string name, int gradeToSign, int gradeToExecute);
+		AForm(std::string name, size_t gradeToSign, size_t gradeToExecute);
 		AForm(AForm const &src);
 		virtual ~AForm();
 		AForm &operator=(AForm const &src);
 		std::string const	&getName() const;
 		bool				getSigned() const;
-		int					getGradeToSign() const;
-		int					getGradeToExecute() const;
+		size_t				getGradeToSign() const;
+		size_t				getGradeToExecute() const;
 		void				beSigned(Bureaucrat const &src);
 		virtual void 		execute(Bureaucrat const &executor) const;
 		virtual void		executeAction() const = 0;

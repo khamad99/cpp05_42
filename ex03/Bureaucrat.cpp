@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 08:53:06 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 08:28:04 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:16:32 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string const &name, size_t grade) : _name(name)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -52,7 +52,7 @@ std::string const	&Bureaucrat::getName() const
 	return (this->_name);
 }
 
-int					Bureaucrat::getGrade() const
+size_t				Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }
