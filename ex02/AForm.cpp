@@ -6,19 +6,27 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:37:19 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:48:54 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:36:44 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm() : _name("default"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
+AForm::AForm() :
+_name("default"),
+_signed(false),
+_gradeToSign(150),
+_gradeToExecute(150)
 {
 	return ;
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) :
+_name(name),
+_signed(false),
+_gradeToSign(gradeToSign),
+_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
@@ -27,7 +35,11 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 	return ;
 }
 
-AForm::AForm(AForm const &src) : _name(src._name), _signed(src._signed), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
+AForm::AForm(AForm const &src) :
+_name(src._name),
+_signed(src._signed),
+_gradeToSign(src._gradeToSign),
+_gradeToExecute(src._gradeToExecute)
 {
 	return ;
 }

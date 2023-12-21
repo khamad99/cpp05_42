@@ -6,19 +6,23 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 12:55:42 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:47:54 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:03:34 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("default", 25, 5), _target("default")
+PresidentialPardonForm::PresidentialPardonForm() :
+AForm("default", 25, 5),
+_target("default")
 {
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) :
+AForm("PresidentialPardonForm", 25, 5),
+_target(target)
 {
 	return ;
 }

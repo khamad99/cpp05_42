@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 09:01:56 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 11:20:51 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:06:57 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		main(void)
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
+		(void)rrf;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		delete rrf;
 	}
 	catch (std::exception & e)
 	{

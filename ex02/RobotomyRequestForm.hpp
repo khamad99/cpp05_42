@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:13:27 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:50:35 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:51:12 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
+# include <ctime>
 # include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
@@ -22,8 +24,9 @@ class RobotomyRequestForm : public AForm
 	private:
 		std::string const	_target;
 		virtual void		executeAction() const;
-	public:
 		RobotomyRequestForm();
+
+	public:
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm const &src);
 		virtual ~RobotomyRequestForm();

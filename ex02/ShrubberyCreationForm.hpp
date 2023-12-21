@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:05:17 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 07:54:25 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:51:40 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
@@ -22,9 +23,9 @@ class ShrubberyCreationForm : public AForm
 	private:
 		std::string const	_target;
 		virtual void		executeAction() const;
+		ShrubberyCreationForm();
 		
 	public:
-		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const &src);
 		virtual ~ShrubberyCreationForm();

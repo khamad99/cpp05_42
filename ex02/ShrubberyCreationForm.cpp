@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:05:56 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 08:02:21 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:56:10 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 #include "Bureaucrat.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm() :
+AForm("default", 145, 137),
+_target("default")
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
+AForm("ShrubberyCreationForm", 145, 137),
+_target(target)
 {
 	return ;
 }
@@ -49,7 +53,9 @@ std::string const	&ShrubberyCreationForm::getTarget() const
 
 void				ShrubberyCreationForm::executeAction() const
 {
-	std::ofstream	ofs(this->_target + "_shrubbery");
+	std::string		fileName = this->_target + "_shrubbery";
+
+	std::ofstream	ofs(fileName.c_str());
 	if (ofs.is_open())
 	{
 		ofs << "       _-_" << std::endl;

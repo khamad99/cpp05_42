@@ -6,19 +6,23 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:13:56 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/28 08:02:27 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:04:05 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("default", 72, 45), _target("default")
+RobotomyRequestForm::RobotomyRequestForm() :
+AForm("default", 72, 45),
+_target("default")
 {
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) :
+AForm("RobotomyRequestForm", 72, 45),
+_target(target)
 {
 	return ;
 }
