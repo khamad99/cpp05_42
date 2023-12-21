@@ -6,19 +6,27 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:37:19 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/09/27 11:54:44 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:24:27 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _name("Default"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
+Form::Form() :
+_name("Default"),
+_signed(false),
+_gradeToSign(150),
+_gradeToExecute(150)
 {
 	return ;
 }
 
-Form::Form(std::string const &name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(std::string const &name, int gradeToSign, int gradeToExecute) : 
+_name(name),
+_signed(false),
+_gradeToSign(gradeToSign),
+_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
@@ -27,7 +35,10 @@ Form::Form(std::string const &name, int gradeToSign, int gradeToExecute) : _name
 	return ;
 }
 
-Form::Form(Form const &src) : _name(src._name), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute)
+Form::Form(Form const &src) :
+_name(src._name),
+_gradeToSign(src._gradeToSign),
+_gradeToExecute(src._gradeToExecute)
 {
 	*this = src;
 	return ;
@@ -95,4 +106,3 @@ std::ostream &operator<<(std::ostream &o, Form const &src)
 	o << " and require grade " << src.getGradeToSign() << " to be signed and grade " << src.getGradeToExecute() << " to be executed";
 	return (o);
 }
-
